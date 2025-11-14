@@ -1,96 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
+    <title>Semantic Layout</title>
     <style>
-        /* body{
+        body{
+          width: 900px;
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: Arial;
         }
-        html,*{
-            box-sizing: inherit;
+
+        header, nav, section, article, aside, footer{
+            border: 2px solid #999;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
         }
-        img{
-            border:2x solid black;
-            float: left;
+
+        nav{
+            margin-top: 5px;
         }
-        p{
-            color: blue;
-            display: inline-block;
-        }
-        #para{
-            color: red;
-        } */
-         main{
-            width:900px;
-            height:auto;
-            margin:0 auto;
-            background-color: blue;
+
+        .main{
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: space-between;
-            /* align-content: last baseline; */
-            /* align-items: last baseline; */
-            align-items: flex-end;
+            margin-top: 5px;
+        }
 
-         }
-         .box{
-            width:200px;
-            height:200px;
-            background-color: brown;
-            
+        section{
+            flex: 2;
+            margin-right: 5px;
+        }
 
-         }
-         section{
-             width:900px;
-            height:300px;
-            background-color: chartreuse;
-            margin: 10px auto;
-            display: flex;
+        aside{
+            flex: 1;
+        }
 
-         }
-         #left{
-            flex-grow: 1;
-            background-color: darkcyan;
-         }
-         #right{
-            flex-grow: 2;
-            background-color: blueviolet;
-            }
+        article{
+            margin-top: 5px;
+        }
 
-         
-        
-
+        footer{
+            margin-top: 5px;
+        }
     </style>
 </head>
-<body>
-    <!-- <img src="KRISHNA.jpg" alt="KRISHNA" align="left" width="200px" height="100px">
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, ad. Ipsam necessitatibus ipsum ullam delectus inventore fuga dolores aliquid commodi nisi quaerat? Laudantium quidem soluta autem? Amet vel ipsum ipsam.
-    
-    <p id="para">
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo placeat nulla perferendis consequatur. Animi harum veritatis, inventore corporis est illo aspernatur nam eius sapiente, iusto ipsa at. Repellat, mollitia. Dignissimos.
-    </p>
-    </p> -->
-    <main>
-        <div class="box">1</div>
-        <div class="box">2</div>
-        <div class="box">3</div>
-        <div class="box">4</div>
-        <div class="box">5</div>
-        <div class="box">6</div>
-        <div class="box">7</div>
-        <div class="box" style="height: 320px;">8</div>
 
-    </main>
-    <section>
-        <div id="left">left</div>
-        <div id="right">right</div>
-    </section>
+<body>
+
+    <header>header</header>
+
+    <nav>nav</nav>
+
+    <div class="main">
+        <div style="flex:2;">
+            <section>section</section>
+            <article>article</article>
+        </div>
+        <aside>aside</aside>
+    </div>
+
+    <footer>footer</footer>
+
 </body>
 </html>
