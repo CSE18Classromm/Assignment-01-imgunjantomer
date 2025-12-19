@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Worldwide</title>
+  <style>
+    * { 
+        box-sizing: border-box;
+        margin: 0; 
+        padding: 0; 
+    }
+    body { 
+        font-family: Arial, sans-serif; 
+        background: #f5f7fa; 
+        color: #333;
+    }
+
+    header {
+      background: #1e6cff;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 { 
+      font-size: 24px; 
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #1e6cff, #4facfe);
+      padding: 50px 20px;
+      color: white;
+    }
+
+    .search-box {
+      background: white;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .search-box input,
+    .search-box select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .search-box button {
+      background: #ffb703;
+      border: none;
+      color: #333;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-btn {
+      background: #ffb703;
+      color: #333;
+      padding: 6px 14px;
+      border-radius: 18px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .dropdown-btn:focus {
+      outline: none;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 38px;
+      left: 0;
+      background-color: white;
+      min-width: 170px;
+      border-radius: 6px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 14px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .services {
+      max-width: 1100px;
+      margin: 40px auto;
+      display: grid;
+      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .service-card h3 { margin-top: 10px; }
+
+    .deals {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .deal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .deal-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .deal-card img { width: 100%; height: 160px; object-fit: cover; }
+
+    .deal-card div { padding: 15px; }
+
+    footer {
+      background: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="background:#ffb703; text-align:center; padding:10px 0;">
+    <h2 style="color:white; font-size:28px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:bold;">Welcome to Travel Worldwide</h2>
+  </div>
+
+<header>
+  <h1>Trip.com</h1>
+  <nav style="display:flex; align-items:center; gap:18px; padding:0 20px; max-width:1200px; margin:0 auto; flex-wrap:nowrap;">
+
+    <input type="text" placeholder="Search destinations..." style="padding:5px 12px; border-radius:18px; border:none; font-size:14px; width:170px;">
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Hotels ▾</button>
+    <div class="dropdown-content">
+      <a href="#">City Hotels</a>
+      <a href="#">Resorts</a>
+      <a href="#">Luxury Hotels</a>
+      <a href="#">Budget Hotels</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Flights ▾</button>
+    <div class="dropdown-content">
+      <a href="#">Domestic Flights</a>
+      <a href="#">International Flights</a>
+      <a href="#">Charter Flights</a>
+    </div>
+  </div>
+
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Car Services ▾</button>
+    <div class="dropdown-content">
+      <a href="#">Car Rental</a>
+      <a href="#">Airport Pickup</a>
+      <a href="#">Self Drive</a>
+    </div>
+  </div>
+
+
+  <div class="dropdown">
+    <button class="dropdown-btn">Food ▾</button>
+    <div class="dropdown-content">
+      <a href="#">Restaurants</a>
+      <a href="#">Food Delivery</a>
+      <a href="#">Local Cuisine</a>
+    </div>
+  </div>
+
+  <a href="#signin" style="color:white; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-decoration:none; font-size:14px; white-space:nowrap;">
+  Sign In / Register
+  </a>
+
+</nav>
+</header>
+
+<section class="hero">
+  <div style="text-align:center; margin-bottom:30px;">
+    <h2 style="color:white; font-size:28px; font-weight:bold;">Start your trip from here!!</h2>
+    <p>Book hotels, flights, cars, and food services all in one place...</p>
+  </div>
+  <div class="search-box">
+    <select>
+      <option>Hotels</option>
+      <option>Flights</option>
+      <option>Trains</option>
+    </select>
+    <input type="text" placeholder="City or hotel name" />
+    <input type="date" />
+    <input type="date" />
+    <button>Search</button>
+  </div>
+</section>
+
+<section class="services">
+  <div class="service-card"><h3>🏨 Hotels</h3><p>Book hotels worldwide</p></div>
+  <div class="service-card"><h3>✈️ Flights</h3><p>Domestic & international</p></div>
+  <div class="service-card"><h3>🚆 Food</h3><p>Italian Cuisine & Delivery Services</p></div>
+  <div class="service-card"><h3>🎫 Attractions</h3><p>Tickets & tours</p></div>
+</section>
+
+<section class="deals">
+  <h2>Popular Deals</h2>
+  <div class="deal-grid">
+    <div class="deal-card">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" />
+      <div><h4>Paris Hotels</h4><p>From $120/night</p></div>
+    </div>
+    <div class="deal-card">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" />
+      <div><h4>Bali Resorts</h4><p>From $95/night</p></div>
+    </div>
+    <div class="deal-card">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" />
+      <div><h4>New York Flights</h4><p>From $320</p></div>
+    </div>
+  </div>
+</section>
+<section class="deals">
+  <h2>Popular Cities in India</h2>
+  <div class="deal-grid">
+    <div class="deal-card">
+      <img src="./mumbai.jpg" alt="Mumbai">
+      <div><h4>Mumbai</h4><p>708 hotels</p></div>
+    </div>
+    <div class="deal-card">
+      <img src="./istockphoto-530741074-612x612.jpg" alt="New Delhi">
+      <div><h4>New Delhi</h4><p>577 hotels</p></div>
+    </div>
+    <div class="deal-card">
+      <img src="./bengluru.jpg" alt="Benguluru">
+      <div><h4>Benguluru</h4><p>423 hotels</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="signin" style="
+  background: linear-gradient(to right, #1e6cff, #4facfe);
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+">
+  <div style="
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    text-align: center;
+  ">
+    <h2 style="color:#1e6cff; margin-bottom:20px;">Sign In</h2>
+
+    <input type="email" placeholder="Email address" required
+      style="width:100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc;" />
+
+    <input type="password" placeholder="Password" required
+      style="width:100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc;" />
+
+    <button style="
+      width:100%;
+      padding:10px;
+      margin-top:15px;
+      background:#ffb703;
+      border:none;
+      border-radius:6px;
+      font-weight:bold;
+      cursor:pointer;
+    ">
+      Sign In
+    </button>
+
+    <p style="margin-top:15px; font-size:14px;">
+      Don’t have an account?
+      <a href="#" style="color:#1e6cff; font-weight:bold; text-decoration:none;">Register</a>
+    </p>
+
+    <p style="margin-top:10px;">
+      <a href="#" style="color:#555; text-decoration:none;">↑ Back to Top</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Trip.com Clone – Educational Purpose Only</p>
+</footer>
+
+</body>
+</html>
